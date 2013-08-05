@@ -1,4 +1,21 @@
 function Controller() {
+    function __alloyId4() {
+        $.__views.foodExchange.removeEventListener("open", __alloyId4);
+        if ($.__views.foodExchange.activity) $.__views.foodExchange.activity.onCreateOptionsMenu = function(e) {
+            var __alloyId3 = {
+                title: "Write",
+                showAsAction: Ti.Android.SHOW_AS_ACTION_IF_ROOM,
+                id: "__alloyId2"
+            };
+            $.__views.__alloyId2 = e.menu.add(_.pick(__alloyId3, Alloy.Android.menuItemCreateArgs));
+            $.__views.__alloyId2.applyProperties(_.omit(__alloyId3, Alloy.Android.menuItemCreateArgs));
+            onClickWriteBtn ? $.__views.__alloyId2.addEventListener("click", onClickWriteBtn) : __defers["$.__views.__alloyId2!click!onClickWriteBtn"] = true;
+        }; else {
+            Ti.API.warn("You attempted to attach an Android Menu to a lightweight Window");
+            Ti.API.warn("or other UI component which does not have an Android activity.");
+            Ti.API.warn("Android Menus can only be opened on TabGroups and heavyweight Windows.");
+        }
+    }
     function onClickWriteBtn() {
         Ti.UI.createAlertDialog({
             message: "로그인 검사 후 글쓰기 창으로 연결",
@@ -20,15 +37,10 @@ function Controller() {
         id: "foodExchange"
     });
     $.__views.foodExchange && $.addTopLevelView($.__views.foodExchange);
-    $.__views.__alloyId1 = Ti.UI.createButton({
-        title: "Write",
-        id: "__alloyId1"
-    });
-    onClickWriteBtn ? $.__views.__alloyId1.addEventListener("click", onClickWriteBtn) : __defers["$.__views.__alloyId1!click!onClickWriteBtn"] = true;
-    $.__views.foodExchange.rightNavButton = $.__views.__alloyId1;
-    var __alloyId2 = {};
-    var __alloyId4 = [];
-    var __alloyId6 = {
+    $.__views.foodExchange.addEventListener("open", __alloyId4);
+    var __alloyId5 = {};
+    var __alloyId7 = [];
+    var __alloyId9 = {
         type: "Ti.UI.ImageView",
         properties: {
             borderColor: "pink",
@@ -39,8 +51,8 @@ function Controller() {
             height: 40
         }
     };
-    __alloyId4.push(__alloyId6);
-    var __alloyId8 = {
+    __alloyId7.push(__alloyId9);
+    var __alloyId11 = {
         type: "Ti.UI.Label",
         bindId: "userNameLabel",
         properties: {
@@ -55,8 +67,8 @@ function Controller() {
             bindId: "userNameLabel"
         }
     };
-    __alloyId4.push(__alloyId8);
-    var __alloyId10 = {
+    __alloyId7.push(__alloyId11);
+    var __alloyId13 = {
         type: "Ti.UI.Label",
         bindId: "contentLabel",
         properties: {
@@ -73,8 +85,8 @@ function Controller() {
             bindId: "contentLabel"
         }
     };
-    __alloyId4.push(__alloyId10);
-    var __alloyId12 = {
+    __alloyId7.push(__alloyId13);
+    var __alloyId15 = {
         type: "Ti.UI.Label",
         bindId: "dateLabel",
         properties: {
@@ -89,32 +101,32 @@ function Controller() {
             bindId: "dateLabel"
         }
     };
-    __alloyId4.push(__alloyId12);
-    var __alloyId3 = {
+    __alloyId7.push(__alloyId15);
+    var __alloyId6 = {
         properties: {
             height: 60,
             name: "postTemplate"
         },
-        childTemplates: __alloyId4
+        childTemplates: __alloyId7
     };
-    __alloyId2["postTemplate"] = __alloyId3;
-    var __alloyId13 = [];
-    var __alloyId15 = [];
-    $.__views.__alloyId16 = {
+    __alloyId5["postTemplate"] = __alloyId6;
+    var __alloyId16 = [];
+    var __alloyId18 = [];
+    $.__views.__alloyId19 = {
         template: "postTemplate",
         properties: {
-            id: "__alloyId16"
+            id: "__alloyId19"
         }
     };
-    __alloyId15.push($.__views.__alloyId16);
+    __alloyId18.push($.__views.__alloyId19);
     $.__views.postSection = Ti.UI.createListSection({
         id: "postSection"
     });
-    __alloyId13.push($.__views.postSection);
-    $.__views.postSection.items = __alloyId15;
+    __alloyId16.push($.__views.postSection);
+    $.__views.postSection.items = __alloyId18;
     $.__views.listView = Ti.UI.createListView({
-        sections: __alloyId13,
-        templates: __alloyId2,
+        sections: __alloyId16,
+        templates: __alloyId5,
         id: "listView"
     });
     $.__views.foodExchange.add($.__views.listView);
@@ -140,6 +152,7 @@ function Controller() {
         }
     });
     __defers["$.__views.__alloyId1!click!onClickWriteBtn"] && $.__views.__alloyId1.addEventListener("click", onClickWriteBtn);
+    __defers["$.__views.__alloyId2!click!onClickWriteBtn"] && $.__views.__alloyId2.addEventListener("click", onClickWriteBtn);
     _.extend($, exports);
 }
 

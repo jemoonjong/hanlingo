@@ -12,13 +12,13 @@ function Controller() {
         id: "foodExchangeDetail"
     });
     $.__views.foodExchangeDetail && $.addTopLevelView($.__views.foodExchangeDetail);
-    $.__views.__alloyId17 = Ti.UI.createLabel({
+    $.__views.__alloyId20 = Ti.UI.createLabel({
         borderColor: "blue",
         borderWidth: 1,
         text: "Detail View",
-        id: "__alloyId17"
+        id: "__alloyId20"
     });
-    $.__views.foodExchangeDetail.add($.__views.__alloyId17);
+    $.__views.foodExchangeDetail.add($.__views.__alloyId20);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var args = arguments[0] || {};

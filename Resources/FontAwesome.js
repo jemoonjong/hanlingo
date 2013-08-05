@@ -1,13 +1,5 @@
 function FontAwesome() {
-    switch (Ti.Platform.osname) {
-      case "iphone":
-      case "ipad":
-        this.fontfamily = "FontAwesome";
-        break;
-
-      case "android":
-        this.fontfamily = "fontawesome-webfont";
-    }
+    this.fontfamily = "fontawesome-webfont";
     this.charcode = {
         "icon-glass": 61440,
         "icon-music": 61441,
