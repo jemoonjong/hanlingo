@@ -1,0 +1,10 @@
+<Alloy>
+	<TabGroup>
+		<Tab title="Food Exchange" icon="KS_nav_ui.png">
+			<Require src="foodExchange"></Require>
+		</Tab>
+		<Tab title="Setting" icon="KS_nav_views.png">
+			<Require src="setting"></Require>
+		</Tab>
+	</TabGroup>
+</Alloy>

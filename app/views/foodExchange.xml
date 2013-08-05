@@ -1,0 +1,23 @@
+<Alloy>
+	<Window>
+		<RightNavButton platform="ios">
+			<Button onClick="onClickWriteBtn">Write</Button>
+		</RightNavButton>
+		<Menu id="menu" platform="android">
+            <MenuItem title="Write" onClick="onClickWriteBtn" showAsAction="Ti.Android.SHOW_AS_ACTION_IF_ROOM" />
+        </Menu>
+		<ListView id="listView">
+			<Templates>
+				<ItemTemplate id="postTemplate" name="postTemplate">
+					<ImageView class="pic"></ImageView>
+					<Label class="userName" bindId="userNameLabel">User Name</Label>
+					<Label class="content" bindId="contentLabel">Post Content</Label>
+					<Label class="date" bindId="dateLabel">0000.00.00</Label>
+				</ItemTemplate>
+			</Templates>
+			<ListSection id="postSection">
+				<ListItem template="postTemplate"></ListItem>
+			</ListSection>
+		</ListView>
+	</Window>
+</Alloy>
