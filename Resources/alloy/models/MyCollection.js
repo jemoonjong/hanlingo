@@ -1,6 +1,6 @@
 exports.definition = {
     config: {
-        URL: "http://colorsign.dabcode.com/v1/",
+        URL: "http://api.hanlingo.com/v1/",
         adapter: {
             type: "restapi",
             collection_name: "MyCollection",

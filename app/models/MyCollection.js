@@ -1,6 +1,6 @@
 exports.definition = {  
     config: {
-        "URL": "http://colorsign.dabcode.com/v1/",
+        "URL": "http://api.hanlingo.com/v1/",
         //"debug": 1, 
         "adapter": {
             "type": "restapi",
@@ -11,7 +11,7 @@ exports.definition = {
             // "Accept": "application/vnd.stackmob+json; version=0",
             // "X-StackMob-API-Key": "your-stackmob-key"
         // },
-        // "parentNode": "news.domestic" //your root node
+        , "parentNode": "item" //your root node
     },      
     extendModel: function(Model) {      
         _.extend(Model.prototype, {});
